@@ -1,0 +1,61 @@
+name: Bug report
+description: Report a reproducible problem
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: App/commit version if known
+      placeholder: e.g. 0.0.3 or commit hash
+    validations:
+      required: false
+  - type: input
+    id: os
+    attributes:
+      label: OS
+      placeholder: e.g. Windows 11 / macOS 14 / Ubuntu 22.04
+    validations:
+      required: true
+  - type: input
+    id: node
+    attributes:
+      label: Node.js
+      placeholder: e.g. 20.11.0
+    validations:
+      required: false
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide clear steps so we can reproduce the issue.
+      placeholder: |
+        1. Open the app
+        2. Search for ...
+        3. Click ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / screenshots
+      description: Please remove any sensitive info (paths, usernames) if needed.
+    validations:
+      required: false

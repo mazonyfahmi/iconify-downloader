@@ -1,0 +1,62 @@
+{
+  "Material": [
+    "mdi",
+    "ic",
+    "material-symbols",
+    "material-symbols-light",
+    "material-symbols-outlined",
+    "material-symbols-rounded",
+    "material-symbols-sharp"
+  ],
+  "UI 24px": [
+    "fluent",
+    "fluent-mdl2",
+    "tabler",
+    "carbon",
+    "heroicons",
+    "heroicons-outline",
+    "heroicons-solid"
+  ],
+  "UI 16px / 32px": [
+    "octicon",
+    "lucide",
+    "ph",
+    "ri"
+  ],
+  "UI Other / Mixed Grid": [
+    "uil",
+    "uiw",
+    "bx",
+    "bxs"
+  ],
+  "UI Multicolor": [
+    "fluent-color"
+  ],
+  "Programming": [
+    "devicon",
+    "vscode-icons",
+    "file-icons",
+    "skill-icons"
+  ],
+  "Logos": [
+    "logos",
+    "simple-icons",
+    "cib",
+    "bxl"
+  ],
+  "Emoji": [
+    "noto-emoji",
+    "openmoji",
+    "emojione",
+    "fxemoji",
+    "fluent-emoji"
+  ],
+  "Flags / Maps": [
+    "flag",
+    "flagpack",
+    "gis",
+    "map"
+  ],
+  "Thematic": [],
+  "Archive / Unmaintained": []
+}
