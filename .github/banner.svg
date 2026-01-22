@@ -1,106 +1,154 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0B1220"/>
-      <stop offset="0.45" stop-color="#111B2E"/>
-      <stop offset="1" stop-color="#0B1220"/>
+    <clipPath id="bannerClip">
+      <rect width="1280" height="360" rx="24" ry="24"/>
+    </clipPath>
+    <!-- Gradients -->
+    <linearGradient id="bgLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#F1F5F9"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#60A5FA"/>
-      <stop offset="0.5" stop-color="#A78BFA"/>
-      <stop offset="1" stop-color="#34D399"/>
+    
+    <linearGradient id="primaryGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
     </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000000" flood-opacity="0.35"/>
+
+    <!-- Filters for Light Mode Depth -->
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#64748B" flood-opacity="0.15"/>
     </filter>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="14" result="b"/>
-      <feColorMatrix in="b" type="matrix" values="
-        1 0 0 0 0
-        0 1 0 0 0
-        0 0 1 0 0
-        0 0 0 0.65 0" result="g"/>
-      <feMerge>
-        <feMergeNode in="g"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="15" stdDeviation="20" flood-color="#334155" flood-opacity="0.1"/>
+    </filter>
+    
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="50"/>
     </filter>
   </defs>
 
-  <rect width="1280" height="360" rx="28" fill="url(#bg)"/>
+  <g clip-path="url(#bannerClip)">
+  <!-- Background -->
+  <rect width="1280" height="360" rx="24" ry="24" fill="url(#bgLight)"/>
 
-  <g opacity="0.35" filter="url(#glow)">
-    <circle cx="1040" cy="110" r="140" fill="#60A5FA"/>
-    <circle cx="1120" cy="250" r="120" fill="#A78BFA"/>
-    <circle cx="930" cy="270" r="110" fill="#34D399"/>
-  </g>
+  <!-- Soft Ambient Blobs (Pastel Colors) -->
+  <circle cx="100" cy="50" r="150" fill="#BFDBFE" opacity="0.4" filter="url(#blur)"/>
+  <circle cx="1150" cy="300" r="160" fill="#DDD6FE" opacity="0.4" filter="url(#blur)"/>
 
-  <g opacity="0.25">
-    <path d="M70 280 C190 210, 320 310, 450 255 C585 197, 740 290, 880 240 C1005 196, 1130 240, 1220 210" fill="none" stroke="url(#accent)" stroke-width="10"/>
-  </g>
-
-  <g transform="translate(72 62)" filter="url(#shadow)">
-    <rect x="0" y="0" width="520" height="236" rx="22" fill="#0F172A" opacity="0.92" stroke="#1F2A44"/>
-    <g transform="translate(28 28)">
-      <rect x="0" y="0" width="74" height="74" rx="18" fill="url(#accent)"/>
-      <path d="M20 28h34v30H20z" fill="#0B1220" opacity="0.9"/>
-      <path d="M26 22h22" stroke="#0B1220" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
-      <path d="M26 66h22" stroke="#0B1220" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
-      <path d="M70 18c18 8 30 24 30 43 0 26-20 47-47 47" fill="none" stroke="#93C5FD" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
-      <text x="98" y="34" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="34" font-weight="800" fill="#E5E7EB">Iconify Downloader</text>
-      <text x="98" y="64" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="16" font-weight="600" fill="#94A3B8">Electron + Vite • SVG / JSON • Presets • ZIP • History</text>
-
-      <g transform="translate(0 104)">
-        <rect x="0" y="0" width="464" height="104" rx="18" fill="#0B1220" opacity="0.7" stroke="#1F2A44"/>
-        <g transform="translate(16 18)">
-          <rect x="0" y="0" width="120" height="28" rx="10" fill="#111827" stroke="#24324D"/>
-          <text x="16" y="20" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="12" font-weight="700" fill="#E5E7EB">Collections</text>
-          <rect x="132" y="0" width="128" height="28" rx="10" fill="#111827" stroke="#24324D"/>
-          <text x="148" y="20" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="12" font-weight="700" fill="#E5E7EB">Favorites</text>
-          <rect x="272" y="0" width="176" height="28" rx="10" fill="#111827" stroke="#24324D"/>
-          <text x="288" y="20" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="12" font-weight="700" fill="#E5E7EB">Grouped Like Site</text>
-
-          <rect x="0" y="44" width="212" height="36" rx="12" fill="#0F172A" stroke="#24324D"/>
-          <path d="M18 62h18" stroke="#60A5FA" stroke-width="4" stroke-linecap="round"/>
-          <path d="M18 54h28" stroke="#A78BFA" stroke-width="4" stroke-linecap="round"/>
-          <text x="54" y="67" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="12" font-weight="700" fill="#CBD5E1">Download as ZIP</text>
-
-          <rect x="228" y="44" width="220" height="36" rx="12" fill="#0F172A" stroke="#24324D"/>
-          <path d="M246 54c10 0 18 8 18 18" fill="none" stroke="#34D399" stroke-width="4" stroke-linecap="round"/>
-          <path d="M246 72h28" stroke="#34D399" stroke-width="4" stroke-linecap="round"/>
-          <text x="282" y="67" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="12" font-weight="700" fill="#CBD5E1">Re-run Downloads</text>
-        </g>
-      </g>
+  <g opacity="0.18" fill="none" stroke="#6366F1" stroke-width="2">
+    <g transform="translate(140, 230)">
+      <rect x="0" y="0" width="90" height="70" rx="14"/>
+      <path d="M10 18 H46 L54 28 H80"/>
+    </g>
+    <g transform="translate(500, 70)">
+      <circle cx="0" cy="0" r="26"/>
+      <path d="M0 -10 V10 M-8 2 L0 10 L8 2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(1040, 70)">
+      <rect x="0" y="0" width="70" height="70" rx="16"/>
+      <path d="M18 22 H52 M18 35 H52 M18 48 H44" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(980, 250)">
+      <circle cx="0" cy="0" r="22"/>
+      <circle cx="32" cy="0" r="22"/>
+      <circle cx="16" cy="28" r="22"/>
     </g>
   </g>
 
-  <g transform="translate(650 78)">
-    <text x="0" y="0" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="20" font-weight="800" fill="#E2E8F0">Download, customize, and organize Iconify icons.</text>
-    <text x="0" y="34" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="14" font-weight="600" fill="#94A3B8">SVG with optional monochrome colorize • JSON collections • Folder by prefix • ZIP export</text>
+  <!-- Content Container -->
+  <g transform="translate(100, 60)">
+    
+    <!-- Left Side: Typography -->
+    <g transform="translate(0, 35)">
+      <!-- Badge -->
+      <rect x="0" y="-30" width="130" height="28" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="65" y="-12" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#6366F1" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">ELECTRON + VITE</text>
 
-    <g transform="translate(0 72)">
-      <rect x="0" y="0" width="560" height="178" rx="22" fill="#0F172A" opacity="0.78" stroke="#1F2A44"/>
-      <g transform="translate(22 22)">
-        <rect x="0" y="0" width="170" height="40" rx="14" fill="#0B1220" stroke="#24324D"/>
-        <text x="14" y="26" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="13" font-weight="800" fill="#E5E7EB">Ctrl + K</text>
-        <text x="84" y="26" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="13" font-weight="700" fill="#94A3B8">Focus Search</text>
+      <!-- Title -->
+      <text x="0" y="45" font-family="system-ui, sans-serif" font-size="48" font-weight="800" fill="#1E293B" letter-spacing="-1">
+        Iconify <tspan fill="url(#primaryGradient)">Downloader</tspan>
+      </text>
+      
+      <!-- Description -->
+      <text x="0" y="85" font-family="system-ui, sans-serif" font-size="18" font-weight="500" fill="#64748B" style="line-height: 1.6">
+        <tspan x="0" dy="0">Download, customize, and organize icons.</tspan>
+        <tspan x="0" dy="28">Simple, fast, and local.</tspan>
+      </text>
 
-        <rect x="190" y="0" width="170" height="40" rx="14" fill="#0B1220" stroke="#24324D"/>
-        <text x="204" y="26" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="13" font-weight="800" fill="#E5E7EB">Ctrl + D</text>
-        <text x="270" y="26" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="13" font-weight="700" fill="#94A3B8">Download</text>
-
-        <rect x="380" y="0" width="158" height="40" rx="14" fill="#0B1220" stroke="#24324D"/>
-        <text x="394" y="26" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="13" font-weight="800" fill="#E5E7EB">Ctrl + ,</text>
-        <text x="456" y="26" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="13" font-weight="700" fill="#94A3B8">Settings</text>
-
-        <g transform="translate(0 66)">
-          <rect x="0" y="0" width="516" height="72" rx="18" fill="#0B1220" stroke="#24324D"/>
-          <rect x="16" y="16" width="120" height="40" rx="14" fill="url(#accent)"/>
-          <text x="32" y="42" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="13" font-weight="900" fill="#0B1220">Presets</text>
-          <text x="156" y="31" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="13" font-weight="800" fill="#E5E7EB">Brand Blue • Brand Purple • Original</text>
-          <text x="156" y="52" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="12" font-weight="700" fill="#94A3B8">One-click options to standardize exports</text>
+      <!-- Features Pills (Rounded) -->
+      <g transform="translate(0, 125)">
+        <g filter="url(#softShadow)">
+          <rect width="110" height="36" rx="18" fill="#FFFFFF"/>
+          <text x="55" y="23" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#475569" text-anchor="middle">SVG / JSON</text>
+        </g>
+        <g transform="translate(125, 0)" filter="url(#softShadow)">
+          <rect width="100" height="36" rx="18" fill="#FFFFFF"/>
+          <text x="50" y="23" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#475569" text-anchor="middle">Presets</text>
+        </g>
+        <g transform="translate(240, 0)" filter="url(#softShadow)">
+          <rect width="130" height="36" rx="18" fill="#FFFFFF"/>
+          <path d="M25 18 L35 18 M30 13 L30 23" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"/>
+          <text x="75" y="23" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#475569" text-anchor="middle">Batch Export</text>
         </g>
       </g>
     </g>
+
+    <!-- Right Side: UI Mockup (Super Rounded) -->
+    <g transform="translate(620, -10)">
+      <!-- Main Window Card -->
+      <rect x="0" y="0" width="440" height="250" rx="32" fill="#FFFFFF" filter="url(#cardShadow)"/>
+      <rect x="0" y="0" width="440" height="250" rx="32" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      
+      <!-- Window Controls -->
+      <g transform="translate(30, 25)">
+        <circle cx="0" cy="0" r="6" fill="#FECACA"/> <!-- Redish -->
+        <circle cx="20" cy="0" r="6" fill="#FDE68A"/> <!-- Yellowish -->
+        <circle cx="40" cy="0" r="6" fill="#A7F3D0"/> <!-- Greenish -->
+      </g>
+
+      <!-- Search Area -->
+      <rect x="30" y="55" width="380" height="40" rx="20" fill="#F1F5F9"/>
+      <circle cx="55" cy="75" r="7" stroke="#94A3B8" stroke-width="2" fill="none"/>
+      <line x1="60" y1="80" x2="64" y2="84" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
+      <rect x="350" y="63" width="50" height="24" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="375" y="79" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#64748B" text-anchor="middle">JSON</text>
+
+      <!-- Icons Layout -->
+      <g transform="translate(30, 115)">
+        <!-- Icon 1: Active/Selected -->
+        <g>
+            <rect x="0" y="0" width="70" height="70" rx="24" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+            <!-- Simple Abstract Icon -->
+            <rect x="23" y="23" width="24" height="24" rx="6" fill="#3B82F6"/>
+            <!-- Checkmark badge -->
+            <circle cx="70" cy="0" r="10" fill="#3B82F6"/>
+            <path d="M66 -1 L69 2 L74 -3" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+
+        <!-- Icon 2 -->
+        <g transform="translate(90, 0)">
+            <rect x="0" y="0" width="70" height="70" rx="24" fill="#F8FAFC" stroke="#E2E8F0"/>
+            <circle cx="35" cy="35" r="14" stroke="#94A3B8" stroke-width="2.5" fill="none"/>
+        </g>
+
+        <!-- Icon 3 -->
+        <g transform="translate(180, 0)">
+            <rect x="0" y="0" width="70" height="70" rx="24" fill="#F8FAFC" stroke="#E2E8F0"/>
+            <path d="M25 45 L35 25 L45 45" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </g>
+
+        <!-- Icon 4 (Half visible) -->
+        <g transform="translate(270, 0)">
+            <rect x="0" y="0" width="70" height="70" rx="24" fill="#F8FAFC" stroke="#E2E8F0"/>
+            <rect x="25" y="30" width="20" height="10" rx="2" stroke="#94A3B8" stroke-width="2.5" fill="none"/>
+        </g>
+      </g>
+
+      <!-- Action Button -->
+      <rect x="30" y="200" width="380" height="60" rx="20" fill="#F8FAFC"/> 
+      <!-- Just masking the bottom overflow, visually simulates a footer -->
+    </g>
+  </g>
   </g>
 </svg>
